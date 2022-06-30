@@ -1,6 +1,6 @@
 import { Body, Controller, Get } from '@nestjs/common';
 import { DrainpipeMonitoringService } from './drainpipe-monitoring.service';
-import { RequestDrainpipeInfoDto } from './request.drainpipe-info.dto';
+import { RequestDrainpipeInfoDto } from './dto/request.drainpipe-info.dto';
 import { ResponseDrainpipeInfoDto } from './response.drainpipe-info.dto';
 
 @Controller('drainpipe-monitoring')
@@ -14,9 +14,9 @@ export class DrainpipeMonitoringController {
     @Body() reqDrainDto: RequestDrainpipeInfoDto,
   ): Promise<ResponseDrainpipeInfoDto[]> {
     return this.drainpipeMonitoringService.getDrainpipeApi(
-      reqDrainDto.gubn,
-      reqDrainDto.mea_ymd,
-      reqDrainDto.mea_ymd2,
+      reqDrainDto.GUBN,
+      reqDrainDto.MEA_YMD,
+      reqDrainDto.MEA_YMD2,
     );
   }
 }
