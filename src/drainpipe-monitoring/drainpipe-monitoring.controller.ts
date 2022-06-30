@@ -1,7 +1,7 @@
 import { Body, Controller, Get } from '@nestjs/common';
 import { DrainpipeMonitoringService } from './drainpipe-monitoring.service';
 import { RequestDrainpipeInfoDto } from './dto/request.drainpipe-info.dto';
-import { ResponseDrainpipeInfoDto } from './response.drainpipe-info.dto';
+import { ResponseDrainpipeInfoDto } from './dto/response.drainpipe-info.dto';
 
 @Controller('drainpipe-monitoring')
 export class DrainpipeMonitoringController {
