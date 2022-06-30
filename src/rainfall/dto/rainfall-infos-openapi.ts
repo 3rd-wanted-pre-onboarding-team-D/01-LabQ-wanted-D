@@ -1,6 +1,6 @@
-import { RainFallInfo } from './rainfall-info.dto';
+import { RainfallInfo } from './rainfall-info.dto';
 
-export class RainFallInfosOpenAPI {
+export class RainfallInfosOpenAPI {
   ListRainfallService: {
     list_total_count: number;
 
@@ -9,6 +9,6 @@ export class RainFallInfosOpenAPI {
       MESSAGE: string;
     };
 
-    row: [RainFallInfo];
+    row: RainfallInfo[];
   };
 }

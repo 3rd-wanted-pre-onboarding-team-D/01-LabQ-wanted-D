@@ -24,11 +24,24 @@ describe('RainfallService', () => {
       const guName = '강남구';
 
       // when
-
       const result = service['getTotalCount'](guName);
 
       // then
       await expect(result).resolves.toEqual(expect.any(Number));
+    });
+  });
+
+  describe('getRainfallInfos', () => {
+    test('해당하는 지역구의 모든 강우량을 가져오는가', async () => {
+      // given
+      const guName = '강남구';
+      // when
+      const result = await service.getRainfallInfos(guName);
+
+      //then
+      expect(result).toBeDefined();
+      expect(result.list_total_count).toEqual(expect.any(Number));
+      expect(result.data).toHaveLength(result.list_total_count);
     });
   });
 });

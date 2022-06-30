@@ -1,4 +1,4 @@
-export class RainFallInfo {
+export class RainfallInfo {
   RAINGAUGE_CODE: number;
   RAINGAUGE_NAME: string;
   GU_CODE: number;
