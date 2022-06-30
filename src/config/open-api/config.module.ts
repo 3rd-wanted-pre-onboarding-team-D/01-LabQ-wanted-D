@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { OpenApiConfigService } from './config.service';
 
 @Module({
+  imports: [ConfigModule.forRoot()],
   providers: [ConfigService, OpenApiConfigService],
   exports: [ConfigService, OpenApiConfigService],
 })
