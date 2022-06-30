@@ -1,4 +1,4 @@
-import { ResponseDrainpipeInfoDto } from '../response.drainpipe-info.dto';
+import { ResponseDrainpipeInfoDto } from '../dto/response.drainpipe-info.dto';
 
 export class DrainpipeInfoOpenApiDto {
   DrainpipeMonitoringInfo: {
