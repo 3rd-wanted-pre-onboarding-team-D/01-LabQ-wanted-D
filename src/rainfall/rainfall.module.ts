@@ -11,6 +11,6 @@ import { RainfallService } from './rainfall.service';
   ],
   controllers: [RainfallController],
   providers: [RainfallService],
-  exports: [RainfallService],
+  exports: [RainfallModule],
 })
 export class RainfallModule {}

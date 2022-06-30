@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { OpenApiConfigModule } from './config/open-api/config.module';
 import { DrainpipeMonitoringModule } from './drainpipe-monitoring/drainpipe-monitoring.module';
 import { RainfallModule } from './rainfall/rainfall.module';
+import { AnomalyDetectionModule } from './anomaly-detection/anomaly-detection.module';
 
 
 @Module({
@@ -14,6 +15,7 @@ import { RainfallModule } from './rainfall/rainfall.module';
     OpenApiConfigModule,
     DrainpipeMonitoringModule,
     RainfallModule,
+    AnomalyDetectionModule,
   ],
   controllers: [AppController],
   providers: [
