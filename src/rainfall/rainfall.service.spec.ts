@@ -44,19 +44,4 @@ describe('RainfallService', () => {
       expect(result.data).toHaveLength(result.list_total_count);
     });
   });
-
-  // TODO: console.log 제거
-  describe('get', () => {
-    test('get Test', async () => {
-      // given
-      const start = 1;
-      const end = 20;
-      const guName = '강남구';
-      // when
-      const result = await service['get'](start, end, guName);
-
-      // then
-      console.log(result);
-    });
-  });
 });

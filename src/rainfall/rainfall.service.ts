@@ -2,8 +2,8 @@ import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
 import { map, lastValueFrom } from 'rxjs';
 import { OpenApiConfigService } from '../config/open-api/config.service';
-import { GetRainfallInfos } from './dto/get-rainfall-infos';
-import { RainfallInfosOpenAPI } from './dto/rainfall-infos-openapi';
+import { GetRainfallInfos } from './dto/get-rainfall-infos.dto';
+import { RainfallInfosOpenAPI } from './dto/rainfall-infos-openapi.dto';
 
 @Injectable()
 export class RainfallService {

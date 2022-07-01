@@ -1,5 +1,5 @@
 import { RainfallInfo } from './rainfall-info.dto';
-import { RainfallInfosOpenAPI } from './rainfall-infos-openapi';
+import { RainfallInfosOpenAPI } from './rainfall-infos-openapi.dto';
 
 export class GetRainfallInfos {
   list_total_count: number;
