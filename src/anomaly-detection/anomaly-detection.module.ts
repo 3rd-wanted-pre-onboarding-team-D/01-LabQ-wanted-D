@@ -10,7 +10,7 @@ import { AnomalyDetectionService } from './anomaly-detection.service';
 
 @Module({
   imports: [
-    HttpModule,
+    HttpModule.register({ baseURL: 'http://openAPI.seoul.go.kr:8088' }),
     OpenApiConfigModule,
     DrainpipeMonitoringModule,
     RainfallModule,
