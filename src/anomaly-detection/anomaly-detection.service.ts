@@ -34,12 +34,9 @@ export class AnomalyDetectionService {
       );
 
     const guName: string = (await DrainpipeDataList)[0].GUBN_NAM;
-    console.log(DrainpipeDataList[0]);
 
     const rainfallDataList: GetRainfallInfos =
       await this.rainfallService.getRainfallInfos(guName);
-    console.log(rainfallDataList.data[0]);
-    console.log(rainfallDataList.data[1000]);
 
     // 각 data 요소들을 측정시간 기준으로 sort
     rainfallDataList.data.sort((a: RainfallInfo, b: RainfallInfo): number => {
