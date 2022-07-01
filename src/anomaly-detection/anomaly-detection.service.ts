@@ -93,6 +93,6 @@ export class AnomalyDetectionService {
             }
         });
 
-        return { success: true, region: guName, FilteredDataList };
+        return { region: guName, FilteredDataList };
     }
 }
