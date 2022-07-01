@@ -1,4 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { DrainpipeMonitoringModule } from '../drainpipe-monitoring/drainpipe-monitoring.module';
+import { RainfallModule } from '../rainfall/rainfall.module';
 import { AnomalyDetectionService } from './anomaly-detection.service';
 
 describe('AnomalyDetectionService', () => {
@@ -6,6 +8,7 @@ describe('AnomalyDetectionService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
+      imports: [RainfallModule, DrainpipeMonitoringModule],
       providers: [AnomalyDetectionService],
     }).compile();
 

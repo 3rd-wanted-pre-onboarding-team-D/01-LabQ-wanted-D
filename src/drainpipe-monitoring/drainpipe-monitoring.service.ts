@@ -1,15 +1,15 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
-import { ConfigService } from '@nestjs/config';
 import { firstValueFrom, map } from 'rxjs';
 import { ResponseDrainpipeInfoDto } from './dto/response.drainpipe-info.dto';
 import { DrainpipeInfoOpenApiDto } from './dto/drainpipe-info-openapi.dto';
+import { OpenApiConfigService } from '../config/open-api/config.service';
 
 @Injectable()
 export class DrainpipeMonitoringService {
   constructor(
     private readonly httpService: HttpService,
-    private readonly configService: ConfigService,
+    private readonly openApiConfigService: OpenApiConfigService,
   ) {}
 
   async getDrainpipeApi(
@@ -86,9 +86,9 @@ export class DrainpipeMonitoringService {
     reqYmd,
     reqYmd2,
   ): Promise<any> {
-    const key = this.configService.get<string>('OPEN_API_KEY');
+    const key = this.openApiConfigService.apiKey;
     //const testUrl = `http://openapi.seoul.go.kr:8088/${key}/json/DrainpipeMonitoringInfo/1/5/01/2022030214/2022030315`;
-    const url = `http://openapi.seoul.go.kr:8088/${key}/json/DrainpipeMonitoringInfo/${startIdx}/${lastIdx}/${reqGubn}/${reqYmd}/${reqYmd2}`;
+    const url = `${key}/json/DrainpipeMonitoringInfo/${startIdx}/${lastIdx}/${reqGubn}/${reqYmd}/${reqYmd2}`;
 
     const responseData = await firstValueFrom(
       this.httpService

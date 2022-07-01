@@ -1,10 +1,10 @@
-import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
+import { OpenApiModule } from '../common/open-api/openApi.module';
 import { DrainpipeMonitoringController } from './drainpipe-monitoring.controller';
 import { DrainpipeMonitoringService } from './drainpipe-monitoring.service';
 
 @Module({
-  imports: [HttpModule],
+  imports: [OpenApiModule],
   controllers: [DrainpipeMonitoringController],
   providers: [DrainpipeMonitoringService],
   exports: [DrainpipeMonitoringService],
