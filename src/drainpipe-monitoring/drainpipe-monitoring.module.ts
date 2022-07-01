@@ -7,6 +7,6 @@ import { DrainpipeMonitoringService } from './drainpipe-monitoring.service';
   imports: [HttpModule],
   controllers: [DrainpipeMonitoringController],
   providers: [DrainpipeMonitoringService],
-  exports: [DrainpipeMonitoringModule],
+  exports: [DrainpipeMonitoringService],
 })
 export class DrainpipeMonitoringModule {}
