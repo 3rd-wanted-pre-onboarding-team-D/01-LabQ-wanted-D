@@ -19,8 +19,13 @@ $ npm i --silent
 $ npm run start
 ```
 
-### **API 명세 문서**
+### **환경변수 설정**
+```.env
+OPEN_API_KEY={인증키}
+```
 
+### **API 명세 문서**
+- Swagger 사용
 - http://localhost:3000/api/
 <details>
 <summary>GET /anomalydetection/gubn</summary>
@@ -48,19 +53,19 @@ $ npm run start
 ### **팀원별 역할**
 
 - 프로젝트 세팅
-  - 담당: @Juyeop Jang
+  - 담당: [@JuyeopJang](https://github.com/JuyeopJang)
   - Hot-Reload, response-interceptor, ConfigModule
 - 강수량 api 모듈 제작
-  - 담당: @김명일
+  - 담당: [@username1103](https://github.com/username1103)
   - OpenAPI를 요청해 데이터 가져오는 모듈
 - 하수관로 api 모듈 제작
-  - 담당: @최아름
+  - 담당: [@reumachoi](https://github.com/reumachoi)
   - OpenAPI를 요청해 데이터 가져오는 모듈
 - Data 처리 모듈 제작
-  - 담당: @현석 고
+  - 담당: [@khsexk](https://github.com/khsexk)
   - 두 OpenAPI 모듈을 통해 가져온 데이터 파싱
 - Response 관리
-  - 담당: @태용 김
+  - 담당: [@YongsHub](https://github.com/YongsHub)
   - 데이터 처리 모듈을 import해서 response까지
 
 ### **Response 예시**
@@ -72,8 +77,7 @@ $ npm run start
 ```
 
 ### **DFD**
-
-<img src='./img/dfd.png'>
+<img src='./img/dfd.png' width=512>
 
 ### **Module Dependencies**
 
