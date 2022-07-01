@@ -49,11 +49,11 @@ export class AnomalyDetectionService {
     const FilteredDataList: Map<string, ResponseDto> = new Map();
 
     // 기준이 되는 시간대
-    const start: string = `${startDate.substring(0, 4)}-${startDate.substring(
+    const start = `${startDate.substring(0, 4)}-${startDate.substring(
       4,
       6,
     )}-${startDate.substring(6, 8)} ${startDate.substring(8, 10)}`;
-    const end: string = `${endDate.substring(0, 4)}-${endDate.substring(
+    const end = `${endDate.substring(0, 4)}-${endDate.substring(
       4,
       6,
     )}-${endDate.substring(6, 8)} ${endDate.substring(8, 10)}`;
