@@ -40,6 +40,7 @@ export class AnomalyDetectionService {
 
         const rainfallDataList: GetRainfallInfos = await this.rainfallService.getRainfallInfos(guName); 
         
+        // 각 data 요소들을 측정시간 기준으로 sort
         rainfallDataList.data.sort((a: RainfallInfo, b: RainfallInfo): number => {
             return new Date(b.RECEIVE_TIME).getTime() - new Date(a.RECEIVE_TIME).getTime();
         });
@@ -57,22 +58,26 @@ export class AnomalyDetectionService {
             const offset = date.getTimezoneOffset()
             date = new Date(date.getTime() - (offset*60*1000))
 
-            const dataDate: string = date.toISOString().split('T')[0];
-            const dataTime: string = date.toISOString().split('T')[1].substring(0,2);
+            const dataDate: string = date.toISOString().split('T')[0]; // YYYY-MM-DD
+            const dataTime: string = date.toISOString().split('T')[1].substring(0,2); // HH
             const compareData: string = dataDate+ ' ' + dataTime;
 
+            // 쿼리에 해당하는 데이터일 때
             if(start <= compareData && compareData <= end){
+                // key = 'YYYY-MM-DD hh:mm'
                 const key: string = dataDate + " "+ date.toISOString().split('T')[1].substring(0,5);
                 
-                // Map에 해당 날짜+시간 키가 없는 경우
+                // Map에 해당 날짜+시간 키가 없는 경우, { key(key), value(ResponseDto) } 삽입
                 if(!FilteredDataList.has(key)){
                     FilteredDataList.set(key, new ResponseDto);
                 }
 
+                // key에 해당되는 데이터 삽입
                 FilteredDataList.get(key).rainfallData.push(
                     new RainfallData(data.RAINGAUGE_CODE, data.RAINGAUGE_NAME, data.RAINFALL10),
                 );
             }
+            // data의 측정 시간이 start 밖으로 넘어가면 forEach문 break
             else if(start > compareData){
                 return false;
             }
@@ -82,6 +87,7 @@ export class AnomalyDetectionService {
         DrainpipeDataList.forEach((data)=> {
             const compareData: string = data.MEA_YMD.substring(0, 16);
 
+            // Map의 키(날짜+시간)에 해당하는 데이터일 때 
             if(FilteredDataList.has(compareData)){
                 FilteredDataList.get(compareData).drainpipeData.push(
                     new DrainpipeData(
