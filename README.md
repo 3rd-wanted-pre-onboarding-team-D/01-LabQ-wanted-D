@@ -1,4 +1,4 @@
-<h1 align=center><strong>1주차: LabQ 기업과제<strong></h1>
+<h1 align=center><strong>1주차: LabQ 기업과제</strong></h1>
 
 <p align=center>
 <img src="https://img.shields.io/badge/Node.js-339933?style=badge&logo=Node.js&logoColor=white">
@@ -100,7 +100,7 @@ OPEN_API_KEY={인증키}
 ### **Module Dependencies**
 ***
 <p>
-<summary>Before Refartor</summary>
+<summary>Before Refactor</summary>
 <img src='./img/dependencies1.png' width=512>
 <div markdown="1">
 - HTTP모듈을 DrainpipeMonitoring, Rainfall, AnomalyDetection 3개의 모듈에서 각각 받음 <br>
@@ -112,7 +112,7 @@ OPEN_API_KEY={인증키}
 # 
 
 <p>
-<summary>After Refartor</summary>
+<summary>After Refactor</summary>
 <img src='./img/dependencies2.png' width=512>
 <div markdown="1">
 - OpenApi모듈로 Config와 Http모듈을 통합해서 Rainfall, DrainpipeMonitoring 모듈에서 사용<br>
